@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject platformPrefab, monsterPrefab, gameOverScreen;
 
-    int platformCount = 50;
+    int platformCount = 20;
     float highestPos = 0f;
     Vector3 spawnPosition;
     float screenX;
@@ -30,8 +30,9 @@ public class GameManager : MonoBehaviour
         spawnPosition = new Vector3();
         screenX = Screen.width;
 
-
-
+        spawnPosition.y = 3.2f;
+        spawnPosition.x = 0f;
+        Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         for (int i = 0; i < platformCount; i++)
         {
             
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
             if (i == platformCount - 1) highestPos = spawnPosition.y;
 
         }
+        
         StartCoroutine(SpawnMonster());
        // Debug.Log("Initial highest pos: " + highestPos);
     }

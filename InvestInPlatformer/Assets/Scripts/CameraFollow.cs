@@ -12,14 +12,10 @@ public class CameraFollow : MonoBehaviour
         if (target.position.y > transform.position.y)
         {
 
-          
-          //  Debug.Log("Score: " + score);
-
             Vector3 newPosition = new Vector3(transform.position.x, target.position.y, transform.position.z);
             transform.position = newPosition;
 
-            float score = (target.position.y - transform.position.y) * 10f;
-
+            float score = (target.position.y);
             gm.ScoreManager((int)score);
         }
     }
