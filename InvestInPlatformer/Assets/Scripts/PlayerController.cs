@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
+    
     [SerializeField] Rigidbody2D rb;
 
     float moveX;
